@@ -15,9 +15,5 @@ spec:
       containers:
       - name: blog-comments
         image: ijanzz5621/blog-comments:latest
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 5000

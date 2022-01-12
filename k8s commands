@@ -8,4 +8,14 @@ TO GET THE MINIKUBE IP:
 
 minikube ip
 
+TO CHANGE THE NUMBER OF MINIKUBE CPU
+====================================
+
+minikube config set cpus 4
+
+EXPOSE MINIKUBE IP:
+===================
+
+minikube tunnel
+
 

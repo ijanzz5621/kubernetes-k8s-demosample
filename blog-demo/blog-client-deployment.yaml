@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blog-posts-depl
+  name: blog-client-depl
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blog-posts
+      app: blog-client
   template:
     metadata:
       labels:
-        app: blog-posts
+        app: blog-client
     spec:
       containers:
-      - name: blog-posts
-        image: ijanzz5621/blog-posts:latest
+      - name: blog-client
+        image: ijanzz5621/blog-client:latest
         ports:
-        - containerPort: 4000
+        - containerPort: 3000
