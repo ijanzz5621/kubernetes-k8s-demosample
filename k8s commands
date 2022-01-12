@@ -3,4 +3,9 @@ RESTART KUBERNETES AFTER UPDATING THE DOCKER IMAGE:
 
 kubectl rollout restart deployment [deployment name]
 
+TO GET THE MINIKUBE IP:
+=======================
+
+minikube ip
+
 

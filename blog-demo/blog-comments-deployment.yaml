@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-comments-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-comments
+  template:
+    metadata:
+      labels:
+        app: blog-comments
+    spec:
+      containers:
+      - name: blog-comments
+        image: ijanzz5621/blog-comments:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5000

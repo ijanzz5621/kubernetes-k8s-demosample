@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-eventbus-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-eventbus
+  template:
+    metadata:
+      labels:
+        app: blog-eventbus
+    spec:
+      containers:
+      - name: blog-eventbus
+        image: ijanzz5621/blog-eventbus:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 7000
