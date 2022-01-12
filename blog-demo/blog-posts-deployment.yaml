@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-post-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-posts
+  template:
+    metadata:
+      labels:
+        app: blog-posts
+    spec:
+      containers:
+      - name: blog-posts
+        image: ijanzz5621/blog-posts:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 4000

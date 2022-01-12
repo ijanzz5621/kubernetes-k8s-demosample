@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Pod
+metadata:
+  name: blog-posts
+  labels:
+    name: blog-posts
+spec:
+  containers:
+  - name: blog-posts
+    image: ijanzz5621/blog-posts:latest
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 3000

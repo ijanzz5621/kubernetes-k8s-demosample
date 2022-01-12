@@ -1,0 +1,6 @@
+RESTART KUBERNETES AFTER UPDATING THE DOCKER IMAGE:
+===================================================
+
+kubectl rollout restart deployment [deployment name]
+
+
