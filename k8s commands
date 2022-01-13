@@ -18,4 +18,9 @@ EXPOSE MINIKUBE IP:
 
 minikube tunnel
 
+INSTRUCTIONS TO INSTALL INGRESS NGINX & LOAD BALANCER
+=====================================================
+
+https://kubernetes.github.io/ingress-nginx/deploy/
+
 
