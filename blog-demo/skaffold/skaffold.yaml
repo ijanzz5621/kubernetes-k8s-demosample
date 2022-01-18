@@ -1,0 +1,58 @@
+apiVersion: skaffold/v2beta26
+kind: Config
+deploy:
+  kubectl:
+    manifest:
+      - ./deploymentfiles/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: ijanzz5621/blog-client
+      context: client # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.js' # location of the files to check for update
+            dest: .
+    - image: ijanzz5621/blog-posts
+      context: posts # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js' # location of the files to check for update
+            dest: .
+    - image: ijanzz5621/blog-comments
+      context: comments # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js' # location of the files to check for update
+            dest: .
+    - image: ijanzz5621/blog-eventbus
+      context: event-bus # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js' # location of the files to check for update
+            dest: .
+    - image: ijanzz5621/blog-query
+      context: query # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js' # location of the files to check for update
+            dest: .
+    - image: ijanzz5621/blog-moderation
+      context: moderation # folder name
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '*.js' # location of the files to check for update
+            dest: .
